@@ -5,6 +5,7 @@
 ;
 ; Студенты МК-301, начало работы 21:00 02.11.2020
 ;
+
 .686
 .model flat, stdcall
 option casemap:none
