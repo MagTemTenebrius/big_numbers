@@ -16,8 +16,17 @@ include c:\masm32\include\user32.inc
 
 include Strings.mac
 
+
+
+; word = 2 byte
+; dword = 4 byte
+
 big_number struct
-	len dd ? : DWORD ; count blocks (1 block = 1 DD)
+	len word ? : DWORD ; count blocks (1 block = 1 DD)
+	; tmp = strlen(number)*4 ~ количество бит занимаемое нашим числом
+	; len = tmp / 32 - количество dword в нашем 
+	; len ++ - если есть отстаток
+	; number_ptr = malloc(sizeof(DWORD) * len)
 	number_ptr dd ? : ptr byte
 	number_sign db ? : byte
 big_number ends
